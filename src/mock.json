@@ -1,121 +1,186 @@
 {
   "dashboardStats": [
     {
-      "label": "ISSUES COMPLETED",
-      "value": "49%",
-      "description": "WEEKLY SCOPE",
+      "label": "HABITS COMPLETED",
+      "value": "73%",
+      "description": "THIS WEEK",
       "intent": "positive",
       "icon": "gear",
       "direction": "up"
     },
     {
-      "label": "MINUTES LOST",
-      "value": "642'",
-      "description": "IN MEETINGS AND RABBIT HOLES",
-      "intent": "negative",
+      "label": "CURRENT STREAK",
+      "value": "12",
+      "description": "DAYS TRADING DISCIPLINE",
+      "intent": "positive",
       "icon": "proccesor",
-      "direction": "down"
+      "direction": "up"
     },
     {
-      "label": "ACCIDENTS",
-      "value": "0",
-      "description": "THE CLIENT ALWAYS IS RIGHT",
-      "intent": "neutral",
+      "label": "NFT BADGES EARNED",
+      "value": "3",
+      "description": "PROOF OF DISCIPLINE",
+      "intent": "positive",
       "icon": "boom",
-      "tag": "4 weeks 🔥"
+      "tag": "2 weeks 🔥"
     }
   ],
   "chartData": {
     "week": [
       {
         "date": "06/07",
-        "sales": 50000,
-        "spendings": 30000,
-        "coffee": 10000
+        "habits": 6,
+        "streaks": 3,
+        "checkins": 8
       },
       {
         "date": "07/07",
-        "sales": 250000,
-        "spendings": 15000,
-        "coffee": 30000
+        "habits": 8,
+        "streaks": 4,
+        "checkins": 10
       },
       {
         "date": "08/07",
-        "sales": 200000,
-        "spendings": 50000,
-        "coffee": 25000
+        "habits": 7,
+        "streaks": 5,
+        "checkins": 9
       },
       {
         "date": "09/07",
-        "sales": 280000,
-        "spendings": 60000,
-        "coffee": 45000
+        "habits": 9,
+        "streaks": 6,
+        "checkins": 12
       },
       {
         "date": "10/07",
-        "sales": 120000,
-        "spendings": 20000,
-        "coffee": 15000
+        "habits": 5,
+        "streaks": 4,
+        "checkins": 7
       },
       {
         "date": "11/07",
-        "sales": 180000,
-        "spendings": 55000,
-        "coffee": 20000
+        "habits": 8,
+        "streaks": 5,
+        "checkins": 10
       },
       {
         "date": "12/07",
-        "sales": 500000,
-        "spendings": 35000,
-        "coffee": 20000
+        "habits": 10,
+        "streaks": 7,
+        "checkins": 13
       },
       {
         "date": "13/07",
-        "sales": 130000,
-        "spendings": 60000,
-        "coffee": 10000
+        "habits": 6,
+        "streaks": 5,
+        "checkins": 8
       }
     ],
     "month": [
-      { "date": "Jan", "spendings": 45000, "sales": 180000, "coffee": 25000 },
-      { "date": "Feb", "spendings": 30000, "sales": 120000, "coffee": 20000 },
-      { "date": "Mar", "spendings": 65000, "sales": 280000, "coffee": 35000 },
-      { "date": "Apr", "spendings": 25000, "sales": 160000, "coffee": 18000 },
-      { "date": "May", "spendings": 80000, "sales": 350000, "coffee": 45000 },
-      { "date": "Jun", "spendings": 40000, "sales": 90000, "coffee": 25000 },
-      { "date": "Jul", "spendings": 70000, "sales": 220000, "coffee": 40000 },
-      { "date": "Aug", "spendings": 55000, "sales": 170000, "coffee": 30000 },
-      { "date": "Sep", "spendings": 60000, "sales": 200000, "coffee": 35000 },
-      { "date": "Oct", "spendings": 35000, "sales": 140000, "coffee": 22000 },
-      { "date": "Nov", "spendings": 75000, "sales": 340000, "coffee": 38000 },
-      { "date": "Dec", "spendings": 90000, "sales": 420000, "coffee": 50000 }
+      {
+        "date": "Jan",
+        "habits": 145,
+        "streaks": 28,
+        "checkins": 180
+      },
+      {
+        "date": "Feb",
+        "habits": 120,
+        "streaks": 25,
+        "checkins": 140
+      },
+      {
+        "date": "Mar",
+        "habits": 165,
+        "streaks": 31,
+        "checkins": 200
+      },
+      {
+        "date": "Apr",
+        "habits": 135,
+        "streaks": 27,
+        "checkins": 160
+      },
+      {
+        "date": "May",
+        "habits": 180,
+        "streaks": 35,
+        "checkins": 220
+      },
+      {
+        "date": "Jun",
+        "habits": 110,
+        "streaks": 22,
+        "checkins": 130
+      },
+      {
+        "date": "Jul",
+        "habits": 170,
+        "streaks": 33,
+        "checkins": 210
+      },
+      {
+        "date": "Aug",
+        "habits": 155,
+        "streaks": 30,
+        "checkins": 190
+      },
+      {
+        "date": "Sep",
+        "habits": 160,
+        "streaks": 32,
+        "checkins": 195
+      },
+      {
+        "date": "Oct",
+        "habits": 140,
+        "streaks": 28,
+        "checkins": 170
+      },
+      {
+        "date": "Nov",
+        "habits": 175,
+        "streaks": 34,
+        "checkins": 215
+      },
+      {
+        "date": "Dec",
+        "habits": 190,
+        "streaks": 38,
+        "checkins": 240
+      }
     ],
     "year": [
       {
         "date": "2020",
-        "spendings": 280000,
-        "sales": 580000,
-        "coffee": 150000
+        "habits": 980,
+        "streaks": 145,
+        "checkins": 1200
       },
       {
         "date": "2021",
-        "spendings": 320000,
-        "sales": 650000,
-        "coffee": 180000
+        "habits": 1250,
+        "streaks": 180,
+        "checkins": 1500
       },
       {
         "date": "2022",
-        "spendings": 450000,
-        "sales": 950000,
-        "coffee": 250000
+        "habits": 1650,
+        "streaks": 240,
+        "checkins": 2000
       },
       {
         "date": "2023",
-        "spendings": 200000,
-        "sales": 520000,
-        "coffee": 120000
+        "habits": 1420,
+        "streaks": 210,
+        "checkins": 1750
       },
-      { "date": "2024", "spendings": 380000, "sales": 820000, "coffee": 200000 }
+      {
+        "date": "2024",
+        "habits": 1800,
+        "streaks": 280,
+        "checkins": 2200
+      }
     ]
   },
   "rebelsRanking": [
@@ -123,17 +188,17 @@
       "id": 1,
       "name": "KRIMSON",
       "handle": "@KRIMSON",
-      "streak": "2 WEEKS STREAK 🔥",
+      "streak": "12 DAYS TRADING DISCIPLINE 🔥",
       "points": 148,
       "avatar": "/avatars/user_krimson.png",
       "featured": true,
-      "subtitle": "2 WEEKS STREAK 🔥"
+      "subtitle": "12 DAYS TRADING DISCIPLINE 🔥"
     },
     {
       "id": 2,
       "name": "MATI",
       "handle": "@MATI",
-      "streak": "",
+      "streak": "8 DAYS HABIT STREAK",
       "points": 129,
       "avatar": "/avatars/user_mati.png"
     },
@@ -141,7 +206,7 @@
       "id": 3,
       "name": "PEK",
       "handle": "@MATT",
-      "streak": "",
+      "streak": "5 DAYS JOURNAL STREAK",
       "points": 108,
       "avatar": "/avatars/user_pek.png"
     },
@@ -149,36 +214,36 @@
       "id": 4,
       "name": "JOYBOY",
       "handle": "@JOYBOY",
-      "streak": "",
+      "streak": "3 DAYS RISK MANAGEMENT",
       "points": 64,
       "avatar": "/avatars/user_joyboy.png"
     }
   ],
   "securityStatus": [
     {
-      "title": "GUARD BOTS",
-      "value": "124/124",
-      "status": "[RUNNING...]",
+      "title": "ACTIVE HABITS",
+      "value": "7/10",
+      "status": "[TRACKING...]",
       "variant": "success"
     },
     {
-      "title": "FIREWALL",
-      "value": "99.9%",
-      "status": "[BLOCKED]",
+      "title": "STREAK HEALTH",
+      "value": "85%",
+      "status": "[STRONG]",
       "variant": "success"
     },
     {
-      "title": "HTML WARNINGS",
-      "value": "12042",
-      "status": "[ACCESSIBILITY]",
+      "title": "MISSED CHECKINS",
+      "value": "3",
+      "status": "[THIS WEEK]",
       "variant": "warning"
     }
   ],
   "notifications": [
     {
       "id": "notif-1",
-      "title": "PAYMENT RECEIVED",
-      "message": "Your payment to Rampant Studio has been processed successfully.",
+      "title": "STREAK MILESTONE!",
+      "message": "Congratulations! You've reached a 12-day trading discipline streak. NFT badge earned!",
       "timestamp": "2024-07-10T13:39:00Z",
       "type": "success",
       "read": false,
@@ -186,8 +251,8 @@
     },
     {
       "id": "notif-2",
-      "title": "INTRO: JOYCO STUDIO AND V0",
-      "message": "About us - We're a healthcare company focused on accessibility and innovation.",
+      "title": "DAILY HABIT REMINDER",
+      "message": "Don't forget to complete your trading journal entry for today. Maintain your streak!",
       "timestamp": "2024-07-10T13:35:00Z",
       "type": "info",
       "read": false,
@@ -195,8 +260,8 @@
     },
     {
       "id": "notif-3",
-      "title": "SYSTEM UPDATE",
-      "message": "Security patches have been applied to all guard bots.",
+      "title": "AI COACH UPDATE",
+      "message": "Your risk management has improved 15% this week. Keep up the great discipline!",
       "timestamp": "2024-07-10T12:15:00Z",
       "type": "info",
       "read": true,

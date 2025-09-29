@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import { XAxis, YAxis, CartesianGrid, Area, AreaChart } from "recharts";
 
@@ -13,26 +12,29 @@ import mockDataJson from "../../../mock.json";
 import { Bullet } from "@/components/ui/bullet";
 import type { MockData, TimePeriod } from "@/types/dashboard";
 
-const mockData = mockDataJson as MockData;
+const mockData = mockDataJson as unknown as MockData;
 
 type ChartDataPoint = {
   date: string;
-  spendings: number;
-  sales: number;
-  coffee: number;
+  habits?: number;
+  streaks?: number;
+  checkins?: number;
+  spendings?: number;
+  sales?: number;
+  coffee?: number;
 };
 
 const chartConfig = {
-  spendings: {
-    label: "Spendings",
+  habits: {
+    label: "Habits",
     color: "var(--chart-1)",
   },
-  sales: {
-    label: "Sales",
+  streaks: {
+    label: "Streaks",
     color: "var(--chart-2)",
   },
-  coffee: {
-    label: "Coffee",
+  checkins: {
+    label: "Check-ins",
     color: "var(--chart-3)",
   },
 } satisfies ChartConfig;
@@ -75,39 +77,39 @@ export default function DashboardChart() {
             }}
           >
             <defs>
-              <linearGradient id="fillSpendings" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="fillHabits" x1="0" y1="0" x2="0" y2="1">
                 <stop
                   offset="5%"
-                  stopColor="var(--color-spendings)"
+                  stopColor="var(--color-habits)"
                   stopOpacity={0.8}
                 />
                 <stop
                   offset="95%"
-                  stopColor="var(--color-spendings)"
+                  stopColor="var(--color-habits)"
                   stopOpacity={0.1}
                 />
               </linearGradient>
-              <linearGradient id="fillSales" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="fillStreaks" x1="0" y1="0" x2="0" y2="1">
                 <stop
                   offset="5%"
-                  stopColor="var(--color-sales)"
+                  stopColor="var(--color-streaks)"
                   stopOpacity={0.8}
                 />
                 <stop
                   offset="95%"
-                  stopColor="var(--color-sales)"
+                  stopColor="var(--color-streaks)"
                   stopOpacity={0.1}
                 />
               </linearGradient>
-              <linearGradient id="fillCoffee" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="fillCheckins" x1="0" y1="0" x2="0" y2="1">
                 <stop
                   offset="5%"
-                  stopColor="var(--color-coffee)"
+                  stopColor="var(--color-checkins)"
                   stopOpacity={0.8}
                 />
                 <stop
                   offset="95%"
-                  stopColor="var(--color-coffee)"
+                  stopColor="var(--color-checkins)"
                   stopOpacity={0.1}
                 />
               </linearGradient>
@@ -145,31 +147,31 @@ export default function DashboardChart() {
               }
             />
             <Area
-              dataKey="spendings"
+              dataKey="habits"
               type="linear"
-              fill="url(#fillSpendings)"
+              fill="url(#fillHabits)"
               fillOpacity={0.4}
-              stroke="var(--color-spendings)"
+              stroke="var(--color-habits)"
               strokeWidth={2}
               dot={false}
               activeDot={{ r: 4 }}
             />
             <Area
-              dataKey="sales"
+              dataKey="streaks"
               type="linear"
-              fill="url(#fillSales)"
+              fill="url(#fillStreaks)"
               fillOpacity={0.4}
-              stroke="var(--color-sales)"
+              stroke="var(--color-streaks)"
               strokeWidth={2}
               dot={false}
               activeDot={{ r: 4 }}
             />
             <Area
-              dataKey="coffee"
+              dataKey="checkins"
               type="linear"
-              fill="url(#fillCoffee)"
+              fill="url(#fillCheckins)"
               fillOpacity={0.4}
-              stroke="var(--color-coffee)"
+              stroke="var(--color-checkins)"
               strokeWidth={2}
               dot={false}
               activeDot={{ r: 4 }}

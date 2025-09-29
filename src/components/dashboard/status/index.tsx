@@ -55,7 +55,7 @@ interface SecurityStatusProps {
 export default function SecurityStatus({ statuses }: SecurityStatusProps) {
   return (
     <DashboardCard
-      title="SECURITY STATUS"
+      title="STATUS"
       intent="success"
       addon={<Badge variant="outline-success">ONLINE</Badge>}
     >

@@ -1,12 +1,10 @@
-
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { SidebarTrigger } from "@/components/ui/sidebar";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import MonkeyIcon from "../../icons/monkey";
-import MobileNotifications from "../notifications/mobile-notifications";
-import type { MockData } from "@/types/dashboard";
-import BellIcon from "../../icons/bell";
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { SidebarTrigger } from '@/components/ui/sidebar';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import MobileNotifications from '../notifications/mobile-notifications';
+import type { MockData } from '@/types/dashboard';
+import BellIcon from '../../icons/bell';
 
 interface MobileHeaderProps {
   mockData: MockData;
@@ -21,11 +19,11 @@ export function MobileHeader({ mockData }: MobileHeaderProps) {
         {/* Left: Sidebar Menu */}
         <SidebarTrigger />
 
-        {/* Center: Monkey Logo + Time */}
+        {/* Center: Momentum Logo */}
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-16 bg-primary rounded flex items-center justify-center">
-              <MonkeyIcon className="size-6 text-primary-foreground" />
+            <div className="h-8 w-16 rounded flex items-center justify-center px-2">
+              <img src="/momentum-logo.png" alt="Momentum" className="h-6 w-auto object-contain" />
             </div>
           </div>
         </div>
@@ -36,7 +34,7 @@ export function MobileHeader({ mockData }: MobileHeaderProps) {
             <Button variant="secondary" size="icon" className="relative">
               {unreadCount > 0 && (
                 <Badge className="absolute border-2 border-background -top-1 -left-2 h-5 w-5 text-xs p-0 flex items-center justify-center">
-                  {unreadCount > 9 ? "9+" : unreadCount}
+                  {unreadCount > 9 ? '9+' : unreadCount}
                 </Badge>
               )}
               <BellIcon className="size-4" />
@@ -44,14 +42,8 @@ export function MobileHeader({ mockData }: MobileHeaderProps) {
           </SheetTrigger>
 
           {/* Notifications Sheet */}
-          <SheetContent
-            closeButton={false}
-            side="right"
-            className="w-[80%] max-w-md p-0"
-          >
-            <MobileNotifications
-              initialNotifications={mockData.notifications}
-            />
+          <SheetContent closeButton={false} side="right" className="w-[80%] max-w-md p-0">
+            <MobileNotifications initialNotifications={mockData.notifications} />
           </SheetContent>
         </Sheet>
       </div>

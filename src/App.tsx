@@ -11,7 +11,7 @@ import mockDataJson from './mock.json';
 import type { MockData } from './types/dashboard';
 import { V0Provider } from './lib/v0-context';
 
-const mockData = mockDataJson as MockData;
+const mockData = mockDataJson as unknown as MockData;
 
 // Font setup (replaces Next.js font loading)
 const fontStyle = {

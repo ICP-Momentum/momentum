@@ -10,7 +10,7 @@ interface RebelsRankingProps {
 export default function RebelsRanking({ rebels }: RebelsRankingProps) {
   return (
     <DashboardCard
-      title="REBELS RANKING"
+      title="TOP RANKING"
       intent="default"
       addon={<Badge variant="outline-warning">2 NEW</Badge>}
     >

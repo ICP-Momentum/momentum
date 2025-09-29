@@ -1,16 +1,16 @@
-import DashboardPageLayout from "../components/dashboard/layout";
-import DashboardStat from "../components/dashboard/stat";
-import DashboardChart from "../components/dashboard/chart";
-import RebelsRanking from "../components/dashboard/rebels-ranking";
-import SecurityStatus from "../components/dashboard/security-status";
-import BracketsIcon from "../components/icons/brackets";
-import GearIcon from "../components/icons/gear";
-import ProcessorIcon from "../components/icons/proccesor";
-import BoomIcon from "../components/icons/boom";
-import mockDataJson from "../mock.json";
-import type { MockData } from "../types/dashboard";
+import DashboardPageLayout from '../components/dashboard/layout';
+import DashboardStat from '../components/dashboard/stat';
+import DashboardChart from '../components/dashboard/chart';
+import TradersRanking from '../components/dashboard/ranking';
+import HabitStatus from '../components/dashboard/status';
+import BracketsIcon from '../components/icons/brackets';
+import GearIcon from '../components/icons/gear';
+import ProcessorIcon from '../components/icons/proccesor';
+import BoomIcon from '../components/icons/boom';
+import mockDataJson from '../mock.json';
+import type { MockData } from '../types/dashboard';
 
-const mockData = mockDataJson as MockData;
+const mockData = mockDataJson as unknown as MockData;
 
 // Icon mapping
 const iconMap = {
@@ -23,8 +23,8 @@ export default function DashboardOverview() {
   return (
     <DashboardPageLayout
       header={{
-        title: "Overview",
-        description: "Last updated 12:05",
+        title: 'Streak: 2 days🔥',
+        description: 'XP:250⚡',
         icon: BracketsIcon,
       }}
     >
@@ -49,8 +49,8 @@ export default function DashboardOverview() {
 
       {/* Main 2-column grid section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <RebelsRanking rebels={mockData.rebelsRanking} />
-        <SecurityStatus statuses={mockData.securityStatus} />
+        <TradersRanking rebels={mockData.rebelsRanking} />
+        <HabitStatus statuses={mockData.securityStatus} />
       </div>
     </DashboardPageLayout>
   );
