@@ -70,7 +70,7 @@ II_CANISTER_ID=$(dfx canister id internet_identity --network local 2>/dev/null |
 echo "✅ Internet Identity canister ID: $II_CANISTER_ID"
 
 # Deploy other canisters
-echo "🏗️ Deploying TradeChain canisters..."
+echo "🏗️ Deploying Momentum canisters..."
 echo "🔧 Deploying user management..."
 dfx deploy user_management --network local
 
@@ -87,26 +87,26 @@ echo "⚙️ Updating environment variables..."
 USER_MANAGEMENT_ID=$(dfx canister id user_management --network local)
 INTERNET_IDENTITY_ID=$(dfx canister id internet_identity --network local 2>/dev/null || echo "$II_CANISTER_ID")
 
-cat > .env.local << EOF
+cat > .env.development << EOF
 # Network Configuration
-NEXT_PUBLIC_DFX_NETWORK=local
-NEXT_PUBLIC_IC_HOST=http://localhost:4943
+VITE_DFX_NETWORK=local
+VITE_IC_HOST=http://localhost:4943
 
 # Canister IDs (updated)
-NEXT_PUBLIC_USER_MANAGEMENT_CANISTER_ID=${USER_MANAGEMENT_ID}
-NEXT_PUBLIC_INTERNET_IDENTITY_CANISTER_ID=${INTERNET_IDENTITY_ID}
+VITE_USER_MANAGEMENT_CANISTER_ID=${USER_MANAGEMENT_ID}
+VITE_INTERNET_IDENTITY_CANISTER_ID=${INTERNET_IDENTITY_ID}
 
 # Use local Internet Identity
-NEXT_PUBLIC_INTERNET_IDENTITY_URL=http://localhost:4943/?canisterId=${INTERNET_IDENTITY_ID}
+VITE_INTERNET_IDENTITY_URL=http://localhost:4943/?canisterId=${INTERNET_IDENTITY_ID}
 
 # Development Configuration
 NODE_ENV=development
 
 # CRITICAL: Disable signature validation in development
-NEXT_PUBLIC_DISABLE_SIGNATURE_VALIDATION=false
+VITE_DISABLE_SIGNATURE_VALIDATION=false
 
 # Disable mock mode
-NEXT_PUBLIC_ENABLE_MOCK_AUTH=false
+VITE_ENABLE_MOCK_AUTH=false
 EOF
 
 # Test canister connectivity

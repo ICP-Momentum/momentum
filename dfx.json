@@ -22,7 +22,7 @@
 			"packtool": "mops sources"
 		},
 		"generate": {
-			"output": "frontend/declarations"
+			"output": "/declarations"
 		},
 		"replica": {
 			"subnet_type": "system"
