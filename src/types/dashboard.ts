@@ -2,10 +2,10 @@ export interface DashboardStat {
   label: string;
   value: string;
   description: string;
-  intent: "positive" | "negative" | "neutral";
+  intent: 'positive' | 'negative' | 'neutral';
   icon: string;
   tag?: string;
-  direction?: "up" | "down";
+  direction?: 'up' | 'down';
 }
 
 export interface ChartDataPoint {
@@ -36,7 +36,7 @@ export interface SecurityStatus {
   title: string;
   value: string;
   status: string;
-  variant: "success" | "warning" | "destructive";
+  variant: 'success' | 'warning' | 'destructive';
 }
 
 export interface Notification {
@@ -44,9 +44,9 @@ export interface Notification {
   title: string;
   message: string;
   timestamp: string;
-  type: "info" | "warning" | "success" | "error";
+  type: 'info' | 'warning' | 'success' | 'error';
   read: boolean;
-  priority: "low" | "medium" | "high";
+  priority: 'low' | 'medium' | 'high';
 }
 
 export interface WidgetData {
@@ -66,4 +66,15 @@ export interface MockData {
   widgetData: WidgetData;
 }
 
-export type TimePeriod = "week" | "month" | "year";
+export interface Habit {
+  id: string;
+  name: string;
+  description?: string;
+  frequency: 'daily' | 'weekly' | 'monthly';
+  target: number;
+  progress: number;
+  createdAt: Date;
+  streak: number;
+}
+
+export type TimePeriod = 'week' | 'month' | 'year';
