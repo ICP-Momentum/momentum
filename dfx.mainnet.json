@@ -1,0 +1,21 @@
+{
+	"canisters": {
+		"user_management": {
+			"type": "motoko",
+			"main": "backend/src/user_management/main.mo"
+		}
+	},
+	"defaults": {
+		"build": {
+			"packtool": "mops sources"
+		}
+	},
+	"networks": {
+		"ic": {
+			"providers": [
+				"https://icp-api.io"
+			],
+			"type": "persistent"
+		}
+	}
+}

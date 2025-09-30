@@ -1,12 +1,11 @@
-
-import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Bullet } from "@/components/ui/bullet";
-import { AnimatePresence, motion, type PanInfo } from "framer-motion";
-import NotificationItem from "./notification-item";
-import type { Notification } from "@/types/dashboard";
-import { SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
-import { useIsV0 } from "@/lib/v0-context";
+import { useState } from 'react';
+import { Badge } from '@/components/ui/badge';
+import { Bullet } from '@/components/ui/bullet';
+import { AnimatePresence, motion, type PanInfo } from 'framer-motion';
+import NotificationItem from './notification-item';
+import type { Notification } from '@/types/dashboard';
+import { SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
+import { useIsV0 } from '@/lib/ui-context';
 
 interface MobileNotificationsProps {
   initialNotifications: Notification[];
@@ -20,8 +19,7 @@ interface SwipeableWrapperProps {
 function SwipeableWrapper({ children, onDelete }: SwipeableWrapperProps) {
   const handleDragEnd = (_event: Event, info: PanInfo) => {
     // Delete if swiped left more than 120px OR with sufficient velocity
-    const shouldDelete =
-      info.offset.x < -120 || (info.offset.x < -50 && info.velocity.x < -500);
+    const shouldDelete = info.offset.x < -120 || (info.offset.x < -50 && info.velocity.x < -500);
 
     if (shouldDelete) {
       // Immediate deletion - let parent handle exit animation
@@ -38,21 +36,18 @@ function SwipeableWrapper({ children, onDelete }: SwipeableWrapperProps) {
       onDragEnd={handleDragEnd}
       whileDrag={{
         scale: 0.98,
-        boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
+        boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
       }}
       className="relative cursor-grab active:cursor-grabbing"
-      style={{ touchAction: "pan-y" }} // Allow vertical scrolling, horizontal dragging
+      style={{ touchAction: 'pan-y' }} // Allow vertical scrolling, horizontal dragging
     >
       {children}
     </motion.div>
   );
 }
 
-export default function MobileNotifications({
-  initialNotifications,
-}: MobileNotificationsProps) {
-  const [notifications, setNotifications] =
-    useState<Notification[]>(initialNotifications);
+export default function MobileNotifications({ initialNotifications }: MobileNotificationsProps) {
+  const [notifications, setNotifications] = useState<Notification[]>(initialNotifications);
 
   const isV0 = useIsV0();
 
@@ -82,10 +77,7 @@ export default function MobileNotifications({
           <h2 className="text-sm font-medium uppercase">Notifications</h2>
         </div>
         <SheetClose>
-          <Badge
-            variant="secondary"
-            className="uppercase text-muted-foreground"
-          >
+          <Badge variant="secondary" className="uppercase text-muted-foreground">
             Close
           </Badge>
         </SheetClose>
@@ -98,7 +90,7 @@ export default function MobileNotifications({
             <p className="text-sm text-muted-foreground">No notifications</p>
           </div>
         ) : (
-          <AnimatePresence mode={isV0 ? "wait" : "popLayout"}>
+          <AnimatePresence mode={isV0 ? 'wait' : 'popLayout'}>
             {notifications.map((notification) => (
               <motion.div
                 key={notification.id}
@@ -107,15 +99,13 @@ export default function MobileNotifications({
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8, x: -300 }}
                 transition={{
-                  layout: { duration: 0.3, ease: "easeOut" },
+                  layout: { duration: 0.3, ease: 'easeOut' },
                   opacity: { duration: 0.2 },
                   scale: { duration: 0.2 },
                   x: { duration: 0.2 },
                 }}
               >
-                <SwipeableWrapper
-                  onDelete={() => deleteNotification(notification.id)}
-                >
+                <SwipeableWrapper onDelete={() => deleteNotification(notification.id)}>
                   <NotificationItem
                     notification={notification}
                     onMarkAsRead={markAsRead}

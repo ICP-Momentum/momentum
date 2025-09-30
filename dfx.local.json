@@ -1,0 +1,40 @@
+{
+	"canisters": {
+		"user_management": {
+			"main": "backend/src/user_management/main.mo",
+			"type": "motoko"
+		},
+		"internet_identity": {
+			"type": "custom",
+			"candid": "canisters/internet_identity/internet_identity.did",
+			"wasm": "canisters/internet_identity/internet_identity.wasm"
+		}
+	},
+	"output_env_file": ".env",
+	"defaults": {
+		"build": {
+			"packtool": "mops sources"
+		},
+		"generate": {
+			"output": "frontend/declarations"
+		},
+		"replica": {
+			"subnet_type": "system"
+		}
+	},
+	"networks": {
+		"local": {
+			"bind": "localhost:4943",
+			"type": "ephemeral",
+			"replica": {
+				"subnet_type": "system"
+			}
+		},
+		"ic": {
+			"providers": [
+				"https://icp-api.io"
+			],
+			"type": "persistent"
+		}
+	}
+}

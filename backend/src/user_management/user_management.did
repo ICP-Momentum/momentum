@@ -1,0 +1,90 @@
+// Momentum - AI-Powered On-Chain Habit Tracker for Traders
+// Candid Interface Definition
+
+type AuthMethod = variant { nfid; internetIdentity };
+type HabitFrequency = variant { daily; weekly };
+type HabitStatus = variant { active; paused; completed; archived };
+
+type User = record {
+  id : text;
+  principalId : text;
+  username : text;
+  email : text;
+  profilePicture : opt blob;
+  authMethod : AuthMethod;
+  walletAddress : text;
+  totalXP : nat;
+  level : nat;
+  currentStreak : nat;
+  longestStreak : nat;
+  totalHabitsCompleted : nat;
+  joinedAt : int;
+  lastActive : int;
+};
+
+type Habit = record {
+  id : text;
+  owner : principal;
+  name : text;
+  description : opt text;
+  category : text;
+  frequency : HabitFrequency;
+  targetStreak : nat;
+  currentStreak : nat;
+  longestStreak : nat;
+  status : HabitStatus;
+  xpPerCompletion : nat;
+  createdAt : int;
+  lastCompletedAt : opt int;
+  totalCompletions : nat;
+};
+
+type CheckIn = record {
+  id : text;
+  habitId : text;
+  owner : principal;
+  completedAt : int;
+  note : opt text;
+  xpEarned : nat;
+};
+
+type Result_User = variant { ok : User; err : text };
+type Result_Habit = variant { ok : Habit; err : text };
+type Result_CheckIn = variant { ok : CheckIn; err : text };
+
+type HealthCheckResult = record {
+  status : text;
+  timestamp : int;
+  userCount : nat;
+  habitCount : nat;
+};
+
+type UserStats = record {
+  totalUsers : nat;
+  totalHabits : nat;
+  totalCheckIns : nat;
+};
+
+service : {
+  // User Management
+  "registerUser" : (AuthMethod, text, text, opt blob) -> (Result_User);
+  "getCurrentUser" : () -> (Result_User);
+  "updateProfile" : (text, text) -> (Result_User);
+  "updateProfilePicture" : (blob) -> (Result_User);
+  "userExists" : () -> (bool);
+
+  // Habit Management
+  "createHabit" : (text, opt text, text, HabitFrequency, nat, nat) -> (Result_Habit);
+  "getUserHabits" : () -> (vec Habit);
+  "getHabit" : (text) -> (opt Habit) query;
+  "updateHabit" : (text, text, opt text, HabitStatus) -> (Result_Habit);
+
+  // Check-in Management
+  "checkInHabit" : (text, opt text) -> (Result_CheckIn);
+  "getHabitCheckIns" : (text) -> (vec CheckIn) query;
+
+  // Statistics
+  "getUserStats" : () -> (UserStats) query;
+  "healthCheck" : () -> (HealthCheckResult) query;
+  "validateSession" : () -> (Result_User);
+}

@@ -15,6 +15,49 @@ dist-ssr
 # Claude
 .claude
 
+# env files
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Ignore DFX build and state
+.dfx/
+**/.dfx/
+
+.vessel/
+**/.vessel/
+
+.mops/
+**/.mops/
+
+# Node modules
+node_modules/
+**/node_modules/
+
+# Logs
+*.log
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+out/
+build/
+
+# Canister artifacts
+*.wasm
+# canisters
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
