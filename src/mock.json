@@ -1,0 +1,287 @@
+{
+  "dashboardStats": [
+    {
+      "label": "HABITS COMPLETED",
+      "value": "73%",
+      "description": "THIS WEEK",
+      "intent": "positive",
+      "icon": "gear",
+      "direction": "up"
+    },
+    {
+      "label": "CURRENT STREAK",
+      "value": "12",
+      "description": "DAYS TRADING DISCIPLINE",
+      "intent": "positive",
+      "icon": "proccesor",
+      "direction": "up"
+    },
+    {
+      "label": "NFT BADGES EARNED",
+      "value": "3",
+      "description": "PROOF OF DISCIPLINE",
+      "intent": "positive",
+      "icon": "boom",
+      "tag": "2 weeks 🔥"
+    }
+  ],
+  "chartData": {
+    "week": [
+      {
+        "date": "06/07",
+        "habits": 6,
+        "streaks": 3,
+        "checkins": 8
+      },
+      {
+        "date": "07/07",
+        "habits": 8,
+        "streaks": 4,
+        "checkins": 10
+      },
+      {
+        "date": "08/07",
+        "habits": 7,
+        "streaks": 5,
+        "checkins": 9
+      },
+      {
+        "date": "09/07",
+        "habits": 9,
+        "streaks": 6,
+        "checkins": 12
+      },
+      {
+        "date": "10/07",
+        "habits": 5,
+        "streaks": 4,
+        "checkins": 7
+      },
+      {
+        "date": "11/07",
+        "habits": 8,
+        "streaks": 5,
+        "checkins": 10
+      },
+      {
+        "date": "12/07",
+        "habits": 10,
+        "streaks": 7,
+        "checkins": 13
+      },
+      {
+        "date": "13/07",
+        "habits": 6,
+        "streaks": 5,
+        "checkins": 8
+      }
+    ],
+    "month": [
+      {
+        "date": "Jan",
+        "habits": 145,
+        "streaks": 28,
+        "checkins": 180
+      },
+      {
+        "date": "Feb",
+        "habits": 120,
+        "streaks": 25,
+        "checkins": 140
+      },
+      {
+        "date": "Mar",
+        "habits": 165,
+        "streaks": 31,
+        "checkins": 200
+      },
+      {
+        "date": "Apr",
+        "habits": 135,
+        "streaks": 27,
+        "checkins": 160
+      },
+      {
+        "date": "May",
+        "habits": 180,
+        "streaks": 35,
+        "checkins": 220
+      },
+      {
+        "date": "Jun",
+        "habits": 110,
+        "streaks": 22,
+        "checkins": 130
+      },
+      {
+        "date": "Jul",
+        "habits": 170,
+        "streaks": 33,
+        "checkins": 210
+      },
+      {
+        "date": "Aug",
+        "habits": 155,
+        "streaks": 30,
+        "checkins": 190
+      },
+      {
+        "date": "Sep",
+        "habits": 160,
+        "streaks": 32,
+        "checkins": 195
+      },
+      {
+        "date": "Oct",
+        "habits": 140,
+        "streaks": 28,
+        "checkins": 170
+      },
+      {
+        "date": "Nov",
+        "habits": 175,
+        "streaks": 34,
+        "checkins": 215
+      },
+      {
+        "date": "Dec",
+        "habits": 190,
+        "streaks": 38,
+        "checkins": 240
+      }
+    ],
+    "year": [
+      {
+        "date": "2020",
+        "habits": 980,
+        "streaks": 145,
+        "checkins": 1200
+      },
+      {
+        "date": "2021",
+        "habits": 1250,
+        "streaks": 180,
+        "checkins": 1500
+      },
+      {
+        "date": "2022",
+        "habits": 1650,
+        "streaks": 240,
+        "checkins": 2000
+      },
+      {
+        "date": "2023",
+        "habits": 1420,
+        "streaks": 210,
+        "checkins": 1750
+      },
+      {
+        "date": "2024",
+        "habits": 1800,
+        "streaks": 280,
+        "checkins": 2200
+      }
+    ]
+  },
+  "rebelsRanking": [
+    {
+      "id": 1,
+      "name": "KRIMSON",
+      "handle": "@KRIMSON",
+      "streak": "12 DAYS TRADING DISCIPLINE 🔥",
+      "points": 148,
+      "avatar": "/avatars/user_krimson.png",
+      "featured": true,
+      "subtitle": "12 DAYS TRADING DISCIPLINE 🔥"
+    },
+    {
+      "id": 2,
+      "name": "MATI",
+      "handle": "@MATI",
+      "streak": "8 DAYS HABIT STREAK",
+      "points": 129,
+      "avatar": "/avatars/user_mati.png"
+    },
+    {
+      "id": 3,
+      "name": "PEK",
+      "handle": "@MATT",
+      "streak": "5 DAYS JOURNAL STREAK",
+      "points": 108,
+      "avatar": "/avatars/user_pek.png"
+    },
+    {
+      "id": 4,
+      "name": "JOYBOY",
+      "handle": "@JOYBOY",
+      "streak": "3 DAYS RISK MANAGEMENT",
+      "points": 64,
+      "avatar": "/avatars/user_joyboy.png"
+    }
+  ],
+  "securityStatus": [
+    {
+      "title": "ACTIVE HABITS",
+      "value": "7/10",
+      "status": "[TRACKING...]",
+      "variant": "success"
+    },
+    {
+      "title": "STREAK HEALTH",
+      "value": "85%",
+      "status": "[STRONG]",
+      "variant": "success"
+    },
+    {
+      "title": "MISSED CHECKINS",
+      "value": "3",
+      "status": "[THIS WEEK]",
+      "variant": "warning"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1",
+      "title": "STREAK MILESTONE!",
+      "message": "Congratulations! You've reached a 12-day trading discipline streak. NFT badge earned!",
+      "timestamp": "2024-07-10T13:39:00Z",
+      "type": "success",
+      "read": false,
+      "priority": "medium"
+    },
+    {
+      "id": "notif-2",
+      "title": "DAILY HABIT REMINDER",
+      "message": "Don't forget to complete your trading journal entry for today. Maintain your streak!",
+      "timestamp": "2024-07-10T13:35:00Z",
+      "type": "info",
+      "read": false,
+      "priority": "low"
+    },
+    {
+      "id": "notif-3",
+      "title": "AI COACH UPDATE",
+      "message": "Your risk management has improved 15% this week. Keep up the great discipline!",
+      "timestamp": "2024-07-10T12:15:00Z",
+      "type": "info",
+      "read": true,
+      "priority": "medium"
+    },
+    {
+      "id": "notif-4",
+      "title": "FIREWALL ALERT",
+      "message": "Blocked 247 suspicious connection attempts in the last hour.",
+      "timestamp": "2024-07-10T11:45:00Z",
+      "type": "warning",
+      "read": true,
+      "priority": "high"
+    }
+  ],
+  "widgetData": {
+    "location": "Buenos Aires, Argentina",
+    "timezone": "UTC-3",
+    "temperature": "18°C",
+    "weather": "Partly Cloudy",
+    "date": "Wednesday, July 10th, 2025"
+  }
+}

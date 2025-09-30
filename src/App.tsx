@@ -1,34 +1,77 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { SidebarProvider } from './components/ui/sidebar';
+import { MobileHeader } from './components/dashboard/mobile-header';
+import { DashboardSidebar } from './components/dashboard/sidebar';
+import Widget from './components/dashboard/widget';
+import Notifications from './components/dashboard/notifications';
+import { MobileChat } from './components/chat/mobile-chat';
+import { Toaster as Sonner } from '@/components/ui/sonner';
+import Chat from './components/chat';
+import DashboardOverview from './pages/DashboardOverview';
+import mockDataJson from './mock.json';
+import type { MockData } from './types/dashboard';
+import { V0Provider } from './lib/v0-context';
+import Habits from './pages/Habits';
+import NFTGallery from './pages/NFTGallery';
+import Leaderboard from './pages/Leaderboard';
+import Settings from './pages/Settings';
+import Coach from './pages/Coach';
+
+const mockData = mockDataJson as unknown as MockData;
+
+// Font setup (replaces Next.js font loading)
+const fontStyle = {
+  fontFamily: 'var(--font-rebels), system-ui, sans-serif',
+};
 
 function App() {
-  const [count, setCount] = useState(0);
+  const isV0 = false; // Set to false for React app (not v0.dev)
+  const loc = window.location.pathname;
+  console.log(loc);
 
   return (
-    <>
-      <div>
-        <a href='https://vite.dev' target='_blank'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
+    <V0Provider isV0={isV0}>
+      <Sonner position='top-center' duration={3000} />
+      <div style={fontStyle} className='antialiased'>
+        <Router>
+          <SidebarProvider>
+            {/* Mobile Header - only visible on mobile */}
+            <MobileHeader mockData={mockData} />
+
+            {/* Desktop Layout */}
+            <div className='w-full grid grid-cols-1 lg:grid-cols-12 gap-gap lg:px-sides'>
+              <div className='hidden lg:block col-span-2 top-0 relative'>
+                <DashboardSidebar />
+              </div>
+              <div className='col-span-1 lg:col-span-7'>
+                <Routes>
+                  <Route path='/' element={<DashboardOverview />} />
+                  <Route path='/habits' element={<Habits />} />
+                  <Route path='/nft-gallery' element={<NFTGallery />} />
+                  <Route path='/leaderboard' element={<Leaderboard />} />
+                  <Route path='/settings' element={<Settings />} />
+                  <Route path='/settings' element={<Settings />} />
+                  <Route path='/ai-coach' element={<Coach />} />
+                  {/* Add more routes here as needed */}
+                </Routes>
+              </div>
+              <div className='col-span-3 hidden lg:block'>
+                <div className='space-y-gap py-sides min-h-screen max-h-screen sticky top-0 overflow-clip'>
+                  <Widget widgetData={mockData.widgetData} />
+                  <Notifications
+                    initialNotifications={mockData.notifications}
+                  />
+                  <Chat />
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile Chat - floating CTA with drawer */}
+            <MobileChat />
+          </SidebarProvider>
+        </Router>
       </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </V0Provider>
   );
 }
 
