@@ -78,10 +78,10 @@ echo "🔗 Regenerating declarations..."
 dfx generate user_management --network local
 dfx generate internet_identity --network local 2>/dev/null || echo "⚠️ Could not generate II declarations, but continuing..."
 
-# Move declarations to correct location
-if [ -d "src/declarations" ]; then
-    cp -r src/declarations/* src/declarations/ 2>/dev/null || true
-fi
+# # Move declarations to correct location
+# if [ -d "src/declarations" ]; then
+#     cp -r src/declarations/* src/declarations/ 2>/dev/null || true
+# fi
 
 echo "⚙️ Updating environment variables..."
 USER_MANAGEMENT_ID=$(dfx canister id user_management --network local)

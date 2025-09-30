@@ -62,11 +62,13 @@ class ICPAgentManager {
     if (userManagementIdl) return;
 
     try {
-      const declarations = await import('../declarations/user_management/index.js');
+      // Try to load from declarations
+      const declarations = await import('../declarations/user_management/service.did.js');
       userManagementIdl = declarations.idlFactory;
       console.log('✅ User management IDL loaded successfully');
     } catch (error) {
-      console.warn('⚠️ Could not load user management IDL - backend may not be deployed yet');
+      console.warn('⚠️ Could not load user management IDL');
+      console.warn('💡 Run: cp -r .dfx/local/canisters/user_management src/declarations/');
     }
   }
 

@@ -1,32 +1,28 @@
 import { Actor, HttpAgent } from "@dfinity/agent";
 
 // Imports and re-exports candid interface
-import { idlFactory } from "./user_management.did.js";
-export { idlFactory } from "./user_management.did.js";
+import { idlFactory } from './user_management.did.js';
+export { idlFactory } from './user_management.did.js';
+// CANISTER_ID is replaced by webpack based on node environment
+export const canisterId = process.env.CANISTER_ID_USER_MANAGEMENT;
 
-/* CANISTER_ID is replaced by webpack based on node environment
- * Note: canister environment variable will be standardized as
- * process.env.CANISTER_ID_<CANISTER_NAME_UPPERCASE>
- * beginning in dfx 0.15.0
+/**
+ * @deprecated since dfx 0.11.1
+ * Do not import from `.dfx`, instead switch to using `dfx generate` to generate your JS interface.
+ * @param {string | import("@dfinity/principal").Principal} canisterId Canister ID of Agent
+ * @param {{agentOptions?: import("@dfinity/agent").HttpAgentOptions; actorOptions?: import("@dfinity/agent").ActorConfig} | { agent?: import("@dfinity/agent").Agent; actorOptions?: import("@dfinity/agent").ActorConfig }} [options]
+ * @return {import("@dfinity/agent").ActorSubclass<import("./user_management.did.js")._SERVICE>}
  */
-export const canisterId =
-  process.env.CANISTER_ID_USER_MANAGEMENT;
-
 export const createActor = (canisterId, options = {}) => {
+  console.warn(`Deprecation warning: you are currently importing code from .dfx. Going forward, refactor to use the dfx generate command for JavaScript bindings.
+
+See https://internetcomputer.org/docs/current/developer-docs/updates/release-notes/ for migration instructions`);
   const agent = options.agent || new HttpAgent({ ...options.agentOptions });
-
-  if (options.agent && options.agentOptions) {
-    console.warn(
-      "Detected both agent and agentOptions passed to createActor. Ignoring agentOptions and proceeding with the provided agent."
-    );
-  }
-
+  
   // Fetch root key for certificate validation during development
   if (process.env.DFX_NETWORK !== "ic") {
-    agent.fetchRootKey().catch((err) => {
-      console.warn(
-        "Unable to fetch root key. Check to ensure that your local replica is running"
-      );
+    agent.fetchRootKey().catch(err => {
+      console.warn("Unable to fetch root key. Check to ensure that your local replica is running");
       console.error(err);
     });
   }
@@ -35,8 +31,12 @@ export const createActor = (canisterId, options = {}) => {
   return Actor.createActor(idlFactory, {
     agent,
     canisterId,
-    ...options.actorOptions,
+    ...(options ? options.actorOptions : {}),
   });
 };
-
-export const user_management = canisterId ? createActor(canisterId) : undefined;
+  
+/**
+ * A ready-to-use agent for the user_management canister
+ * @type {import("@dfinity/agent").ActorSubclass<import("./user_management.did.js")._SERVICE>}
+ */
+export const user_management = createActor(canisterId);

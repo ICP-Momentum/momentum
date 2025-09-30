@@ -1,0 +1,105 @@
+type User = 
+ record {
+   authMethod: AuthMethod;
+   currentStreak: nat;
+   email: text;
+   id: text;
+   joinedAt: int;
+   lastActive: int;
+   level: nat;
+   longestStreak: nat;
+   principalId: text;
+   profilePicture: opt blob;
+   totalHabitsCompleted: nat;
+   totalXP: nat;
+   username: text;
+   walletAddress: text;
+ };
+type Result_2 = 
+ variant {
+   err: text;
+   ok: CheckIn;
+ };
+type Result_1 = 
+ variant {
+   err: text;
+   ok: Habit;
+ };
+type Result = 
+ variant {
+   err: text;
+   ok: User;
+ };
+type HabitStatus = 
+ variant {
+   active;
+   archived;
+   completed;
+   paused;
+ };
+type HabitFrequency = 
+ variant {
+   daily;
+   weekly;
+ };
+type Habit = 
+ record {
+   category: text;
+   createdAt: int;
+   currentStreak: nat;
+   description: opt text;
+   frequency: HabitFrequency;
+   id: text;
+   lastCompletedAt: opt int;
+   longestStreak: nat;
+   name: text;
+   owner: principal;
+   status: HabitStatus;
+   targetStreak: nat;
+   totalCompletions: nat;
+   xpPerCompletion: nat;
+ };
+type CheckIn = 
+ record {
+   completedAt: int;
+   habitId: text;
+   id: text;
+   note: opt text;
+   owner: principal;
+   xpEarned: nat;
+ };
+type AuthMethod = 
+ variant {
+   internetIdentity;
+   nfid;
+ };
+service : {
+  checkInHabit: (habitId: text, note: opt text) -> (Result_2);
+  createHabit: (name: text, description: opt text, category: text, frequency:
+   HabitFrequency, targetStreak: nat, xpPerCompletion: nat) -> (Result_1);
+  getCurrentUser: () -> (Result);
+  getHabit: (habitId: text) -> (opt Habit) query;
+  getHabitCheckIns: (habitId: text) -> (vec CheckIn) query;
+  getUserHabits: () -> (vec Habit);
+  getUserStats: () ->
+   (record {
+      totalCheckIns: nat;
+      totalHabits: nat;
+      totalUsers: nat;
+    }) query;
+  healthCheck: () ->
+   (record {
+      habitCount: nat;
+      status: text;
+      timestamp: int;
+      userCount: nat;
+    }) query;
+  registerUser: (authMethod: AuthMethod, username: text, email: text,
+   profilePicture: opt blob) -> (Result);
+  updateHabit: (habitId: text, name: text, description: opt text, status:
+   HabitStatus) -> (Result_1);
+  updateProfile: (username: text, email: text) -> (Result);
+  updateProfilePicture: (profilePicture: blob) -> (Result);
+  userExists: () -> (bool);
+  validateSession: () -> (Result);
+}
