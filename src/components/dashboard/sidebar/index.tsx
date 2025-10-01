@@ -20,7 +20,6 @@ import ProcessorIcon from '../../icons/proccesor';
 import CuteRobotIcon from '../../icons/cute-robot';
 import EmailIcon from '../../icons/email';
 import GearIcon from '../../icons/gear';
-import MonkeyIcon from '../../icons/monkey';
 import DotsVerticalIcon from '../../icons/dots-vertical';
 import { Bullet } from '@/components/ui/bullet';
 import LockIcon from '../../icons/lock';

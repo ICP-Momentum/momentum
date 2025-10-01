@@ -134,4 +134,4 @@ export const createMockUserManagementActor = () => ({
 });
 
 // Environment flag to enable mock mode
-export const ENABLE_MOCK_AUTH = process.env.NEXT_PUBLIC_ENABLE_MOCK_AUTH === 'true';
+export const ENABLE_MOCK_AUTH = import.meta.env.VITE_ENABLE_MOCK_AUTH === 'true';

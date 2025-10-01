@@ -2,8 +2,8 @@
 // Enhanced development mode error suppression for NFID compatibility
 
 export const DEV_MODE_CONFIG = {
-  SUPPRESS_SIGNATURE_ERRORS: process.env.NODE_ENV === 'development',
-  ENABLE_MOCK_FALLBACK: process.env.NEXT_PUBLIC_ENABLE_MOCK_AUTH === 'true',
+  SUPPRESS_SIGNATURE_ERRORS: import.meta.env.NODE_ENV === 'development',
+  ENABLE_MOCK_FALLBACK: import.meta.env.VITE_ENABLE_MOCK_AUTH === 'true',
   LOG_SUPPRESSED_ERRORS: true, // Set to false to reduce console noise
 };
 

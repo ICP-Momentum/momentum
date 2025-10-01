@@ -7,13 +7,19 @@
 		"internet_identity": {
 			"type": "custom",
 			"candid": "canisters/internet_identity/internet_identity.did",
-			"wasm": "canisters/internet_identity/internet_identity.wasm"
+			"wasm": "canisters/internet_identity/internet_identity.wasm",
+			"remote": {
+				"id": {
+					"ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+				}
+			}
 		},
 		"frontend": {
 			"type": "assets",
 			"source": [
-				"frontend/.next"
-			]
+				"dist"
+			],
+			"build": ""
 		}
 	},
 	"output_env_file": ".env.backend",
