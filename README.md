@@ -6,6 +6,19 @@ Built for ICP WCHL'25 Hackathon
 
 [![ICP](https://img.shields.io/badge/ICP-Blockchain-purple)](https://internetcomputer.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-momentum.icp0.io-blue?style=for-the-badge)](https://yfmxz-kyaaa-aaaaj-a2gqq-cai.icp0.io/)
+
+---
+
+## 🚀 **LIVE DEPLOYMENT STATUS**
+
+### **✅ Successfully Deployed on ICP Mainnet**
+
+- **Frontend Canister ID:** `yfmxz-kyaaa-aaaaj-a2gqq-cai`
+- **Backend Canister ID:** `zugjg-sqaaa-aaaaj-a2gva-cai`
+- **Live Application:** https://yfmxz-kyaaa-aaaaj-a2gqq-cai.icp0.io/
+- **Candid Interface:** https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.icp0.io/?id=zugjg-sqaaa-aaaaj-a2gva-cai
+- **Network:** ICP Mainnet
 
 ---
 
@@ -124,7 +137,8 @@ npm start
 
 6. **Access the application**
 ```
-http://localhost:3000
+Local: http://localhost:3000
+Live: https://yfmxz-kyaaa-aaaaj-a2gqq-cai.icp0.io/
 ```
 
 ---
@@ -170,8 +184,8 @@ http://localhost:3000
 - [x] **Pitch Video** - Problem, solution, market, business model, team
 - [x] **Demo Video** - Complete user flow demonstration
 - [x] **GitHub Repository** - Clean code with meaningful commits
-- [ ] **Live Deployment** - Canister ID and live URL
-- [ ] **Commitment Letter** - Team commitment for October development
+- [x] **Live Deployment** - Canister IDs and live URL on ICP Mainnet
+- [x] **Commitment Letter** - Team commitment for October development
 
 ---
 
@@ -181,6 +195,7 @@ http://localhost:3000
 - Smooth demo: Add habit → Track streak → Mint NFT → AI congratulation
 - Bug-free user experience
 - Clear value proposition demonstration
+- ✅ Live deployment on ICP Mainnet
 
 ### Post-Hackathon (3 months):
 - 100+ active traders
@@ -203,6 +218,7 @@ http://localhost:3000
 - Streak counter with on-chain storage
 - NFT minting for completed streaks
 - Basic AI coaching prompts
+- **✅ Deployed to ICP Mainnet**
 
 ### Phase 2: Enhanced Features (Q4 2025)
 - Exchange API integration (automated verification)
@@ -221,6 +237,23 @@ http://localhost:3000
 - Advanced analytics and insights
 - Institutional trader features
 - Revenue sharing with community
+
+---
+
+## 🔗 Important Links
+
+### **Live Application**
+- **Frontend:** https://yfmxz-kyaaa-aaaaj-a2gqq-cai.icp0.io/
+- **Backend Interface:** https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.icp0.io/?id=zugjg-sqaaa-aaaaj-a2gva-cai
+
+### **Repository & Documentation**
+- **GitHub:** https://github.com/ICP-Momentum/momentum
+- **Demo Video:** [YouTube Link]
+- **Pitch Deck:** [Deck Link]
+
+### **Social Media**
+- **Twitter:** [@MomentumICP]
+- **Discord:** [Community Link]
 
 ---
 
@@ -251,17 +284,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🔗 Links
-
-- **Website:** [Coming Soon]
-- **Demo Video:** [YouTube Link]
-- **Pitch Deck:** [Deck Link]
-- **Canister ID:** [To be deployed]
-- **Twitter:** [@MomentumICP]
-- **Discord:** [Community Link]
-
----
-
 ## 🙏 Acknowledgments
 
 - Internet Computer Protocol team for the amazing infrastructure
@@ -280,6 +302,10 @@ For questions, suggestions, or partnerships:
 
 ---
 
+<div align="center">
+
 **Built with 🔥 on the Internet Computer**
 
 *Discipline is the bridge between goals and accomplishment.*
+
+</div>
