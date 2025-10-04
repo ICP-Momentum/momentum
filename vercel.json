@@ -5,5 +5,7 @@
 			"destination": "/"
 		}
 	],
-	"cleanUrls": true
+	"cleanUrls": true,
+	"installCommand": "npm install --legacy-peer-deps",
+	"buildCommand": "npm run build"
 }
